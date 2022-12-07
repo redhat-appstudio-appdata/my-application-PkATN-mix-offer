@@ -1,0 +1,22 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    appstudio.openshift.io/application: my-application
+    appstudio.openshift.io/component: devfile-sample-yyfm
+    build.appstudio.openshift.io/build: "true"
+    build.appstudio.openshift.io/type: build
+    build.appstudio.openshift.io/version: "0.1"
+    pipelines.appstudio.openshift.io/type: build
+  creationTimestamp: null
+  name: eldevfile-sample-yyfm
+  namespace: sbudhwar-1
+spec:
+  path: /
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: el-devfile-sample-yyfm
+    weight: null
+status: {}
